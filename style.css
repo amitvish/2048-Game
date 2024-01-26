@@ -45,9 +45,9 @@ body {
 #gameOverMessage {
     text-align: center;
     color: red;
-    font-size: 20px;
+    font-size: 60px;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: -400px;
 }
 
 #grid {
