@@ -2,15 +2,23 @@ body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #76b852, #8DC26F);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
     height: 100vh;
     margin: 0;
+    text-align: center; /* Center text within each element */
+}
+
+#gameTitle {
+    color: #776e65;
+    margin-bottom: 20px;
+    font-size: 2em;
 }
 
 #gameContainer {
-    width: 420px;
-    height: 420px;
+    width: 430px;
+    height: 430px;
     background-color: #bbada0;
     padding: 10px;
     border-radius: 10px;
