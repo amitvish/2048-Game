@@ -146,16 +146,6 @@ function updateGame() {
     }
 }
 
-document.getElementById('restartButton').addEventListener('click', function() {
-    grid = [];
-    initGrid();
-    addRandomTile();
-    addRandomTile();
-    updateGame();
-    document.getElementById('gameOverMessage').style.display = 'none';
-});
-
-
 function handleKeyPress(e) {
     let moved = false;
     if (e.key === 'ArrowUp') {
@@ -179,3 +169,33 @@ function handleKeyPress(e) {
     }
 }
 
+
+function checkForWin() {
+    for (let i = 0; i < gridSize; i++) {
+        for (let j = 0; j < gridSize; j++) {
+            if (grid[i][j] === 2048) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+function updateGame() {
+    drawGrid();
+    if (checkForWin()) {
+        alert('Congratulations! You won!');
+        // Optionally, you can stop the game here or let it continue
+    } else if (checkGameOver()) {
+        document.getElementById('gameOverMessage').style.display = 'block';
+    }
+}
+
+document.getElementById('restartButton').addEventListener('click', function() {
+    grid = [];
+    initGrid();
+    addRandomTile();
+    addRandomTile();
+    updateGame();
+    document.getElementById('gameOverMessage').style.display = 'none';
+});
